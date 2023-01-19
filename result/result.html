@@ -1,0 +1,196 @@
+<html lang="jp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Document</title>
+    <script src="result.js"></script>
+    <link rel="stylesheet" href="result.css">
+</head>
+
+<body>
+    <div class="content">
+        <h1>決済結果</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">項目</th>
+                    <th scope="col">フィールド値</th>
+                    <th scope="col">詳細</th>
+                    <th scope="col">必須</th>
+                    <th scope="col">指定条件</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">決済番号</th>
+                    <td id="gid"></td>
+                    <td>決済ごとに発行されるユニークID</td>
+                    <td>〇</td>
+                    <td>半角英数（8字）</td>
+                </tr>
+                <tr>
+                    <th scope="row">決済結果</th>
+                    <td id="rst"></td>
+                    <td>1:決済成功；２：決済失敗</td>
+                    <td>〇</td>
+                    <td>半角数字（１）</td>
+                </tr>
+                <tr>
+                    <th scope="row">カード会社承認番号</th>
+                    <td id="ap"></td>
+                    <td>決済ごとに発行されるユニークID</td>
+                    <td>〇</td>
+                    <td>半角英数（6~7）</td>
+                </tr>
+                <tr>
+                    <th scope="row">エラーコード</th>
+                    <td id="ec"></td>
+                    <td>エラーコード</td>
+                    <td></td>
+                    <td>半角英数(12)</td>
+                </tr>
+                <tr>
+                    <th scope="row">オーダーコード</th>
+                    <td id="god"></td>
+                    <td>決済ごとに発行されるユニークID</td>
+                    <td>〇</td>
+                    <td>半角数字(8)</td>
+                </tr>
+                <tr>
+                    <th scope="row">店舗オーダー番号</th>
+                    <td id="cod"></td>
+                    <td>決済データ送信時に送信された店舗オーダー番号</td>
+                    <td></td>
+                    <td>半角英数（50以内）</td>
+                </tr>
+                <tr>
+                    <th scope="row">決済金額</th>
+                    <td id="am"></td>
+                    <td>決済データ送信時の決済金額</td>
+                    <td>〇</td>
+                    <td>半角数字</td>
+                </tr>
+                <tr>
+                    <th scope="row">税金額</th>
+                    <td id="tx"></td>
+                    <td>決済データ送信時の税金額</td>
+                    <td>〇</td>
+                    <td>半角数字</td>
+                </tr>
+                <tr>
+                    <th scope="row">合計金額</th>
+                    <td id="ta"></td>
+                    <td>決済金額+税金額+送料</td>
+                    <td>〇</td>
+                    <td>半角数字</td>
+                </tr>
+                <tr>
+                    <th scope="row">自動課金金額</th>
+                    <td id="acam"></td>
+                    <td>決済データ送信時の自動課金金額</td>
+                    <td></td>
+                    <td>半角数字</td>
+                </tr>
+                <tr>
+                    <th scope="row">自動課金税額</th>
+                    <td id="actx"></td>
+                    <td>決済データ送信時の自動課金税額</td>
+                    <td></td>
+                    <td>半角数字</td>
+                </tr>
+                <tr>
+                    <th scope="row">自動課金周期</th>
+                    <td id="actp"></td>
+                    <td>決済データ送信時の自動課金周期</td>
+                    <td></td>
+                    <td>定型</td>
+                </tr>
+                <tr>
+                    <th scope="row">課金日指定</th>
+                    <td id="ac1"></td>
+                    <td>決済データ送信時の課金日</td>
+                    <td></td>
+                    <td>定型</td>
+                </tr>
+                <tr>
+                    <th scope="row">課金停止回数指定</th>
+                    <td id="ac3"></td>
+                    <td>決済データ送信時の課金停止回数</td>
+                    <td></td>
+                    <td>定型</td>
+                </tr>
+                <tr>
+                    <th scope="row">課金開始日</th>
+                    <td id="ac4"></td>
+                    <td>決済データ送信時の課金開始日</td>
+                    <td></td>
+                    <td>日付型</td>
+                </tr>
+                <tr>
+                    <th scope="row">課金終了日指定</th>
+                    <td id="ac5"></td>
+                    <td>決済データ送信時の課金終了日</td>
+                    <td></td>
+                    <td>日付型</td>
+                </tr>
+                <tr>
+                    <th scope="row">お試し期間タイプ</th>
+                    <td id="trtp"></td>
+                    <td>決済データ送信時のお試し期間タイプ</td>
+                    <td>△</td>
+                    <td>定型</td>
+                </tr>
+                <tr>
+                    <th scope="row">お試し日数</th>
+                    <td id="tr1"></td>
+                    <td>決済データ送信時のお試し日数</td>
+                    <td>△</td>
+                    <td>定型</td>
+                </tr>
+                <tr>
+                    <th scope="row">お試し月数</th>
+                    <td id="tr2"></td>
+                    <td>決済データ送信時のお試し月数</td>
+                    <td>△</td>
+                    <td>定型</td>
+                </tr>
+                <tr>
+                    <th scope="row">お試し期限</th>
+                    <td id="tr3"></td>
+                    <td>決済データ送信時のお試し期限</td>
+                    <td>△</td>
+                    <td>定型</td>
+                </tr>
+                <tr>
+                    <th scope="row">お試し金額</th>
+                    <td id="tram"></td>
+                    <td>決済データ送信時のお試し金額</td>
+                    <td>△</td>
+                    <td>半角数字</td>
+                </tr>
+                <tr>
+                    <th scope="row">お試し税額</th>
+                    <td id="trtx"></td>
+                    <td>決済データ送信時のお試し税額</td>
+                    <td></td>
+                    <td>半角数字</td>
+                </tr>
+                <tr>
+                    <th scope="row">自動課金番号</th>
+                    <td id="acid"></td>
+                    <td>対象の自動課金番号</td>
+                    <td></td>
+                    <td>半角英数（10字以内）</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
