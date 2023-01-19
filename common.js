@@ -20,8 +20,8 @@ function doPurchase() {
     var billingDay = today.getDate();
     today.setDate(today.getDay() + 7);
     var year = today.getFullYear();
-    var month = today.getMonth() + 1;
-    var day = today.getDate();
+    var month = today.getMonth() ;
+    var day = today.getDate() + 7 ;
     var billingStartDay =  year + "/" + month + "/" + day;
 
     console.log(billingDay);
@@ -34,7 +34,7 @@ function doPurchase() {
     //CP非同期通信よりカード番号入力画面を表示する
     CPToken.CardInfo (
         {
-            aid: '119502'
+            aid: '119502' //固定値
         },
         execPurchase
     );
@@ -46,7 +46,7 @@ function execPurchase(resultCode, errMsg) {
         window.alert(errMsg);
     } else {
         window.alert("購入成功");
-        // スクリプトからフォームをsubmit
+        // 成功したら、RobotpaymentにPOSTする
         $("#mainform").submit();
     }
 }

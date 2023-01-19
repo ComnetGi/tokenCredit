@@ -35,17 +35,17 @@
 
         <form id="mainform" action="https://credit.j-payment.co.jp/gateway/gateway_token.aspx">
 
-            <INPUT TYPE="HIDDEN" NAME="aid" VALUE="119502"> <!-- 店舗ID -->
-            <INPUT TYPE="HIDDEN" NAME="jb" VALUE="CAPTURE"> <!-- 仮実同時売上固定-->
-            <INPUT TYPE="HIDDEN" NAME="rt" VALUE="0"> <!-- 決済結果はキックバックとして通知-->
+            <INPUT TYPE="HIDDEN" NAME="aid" VALUE="119502"> <!-- 店舗ID 固定値-->
+            <INPUT TYPE="HIDDEN" NAME="jb" VALUE="CAPTURE"> <!-- 仮実同時売上固定　固定値-->
+            <INPUT TYPE="HIDDEN" NAME="rt" VALUE="0"> <!-- 決済結果はキックバックとして通知　固定値-->
             <INPUT TYPE="HIDDEN" NAME="cod" VALUE="77777"> <!-- オーダー番号（任意）-->
-            <input id="tkn" name="tkn" type="hidden" value="">
+            <input id="tkn" name="tkn" type="hidden" value="">　<!-- 固定値 -->
             <INPUT TYPE="HIDDEN" NAME="em" VALUE="comnetgi@gmail.com"> <!-- Email-->
             <INPUT TYPE="HIDDEN" NAME="pn" VALUE="0783047760"> <!-- 電話番号-->
-            <INPUT TYPE="HIDDEN" NAME="am" VALUE="0"> <!-- 商品金額-->
-            <INPUT TYPE="HIDDEN" NAME="tx" VALUE="0"> <!-- 税金額-->
-            <INPUT TYPE="HIDDEN" NAME="sf" VALUE="0"> <!-- 送料-->
-            <INPUT TYPE="HIDDEN" NAME="actp" VALUE="4"> <!-- 課金周期-->
+            <INPUT TYPE="HIDDEN" NAME="am" VALUE="0"> <!-- 商品金額固定値-->
+            <INPUT TYPE="HIDDEN" NAME="tx" VALUE="0"> <!-- 税金額固定値　-->
+            <INPUT TYPE="HIDDEN" NAME="sf" VALUE="0"> <!-- 送料固定値-->
+            <INPUT TYPE="HIDDEN" NAME="actp" VALUE="2"> <!-- 課金周期-->
             <INPUT TYPE="HIDDEN" NAME="acam" id="acam" VALUE=""> <!-- 2回目以降課金税抜き金額-->
             <INPUT TYPE="HIDDEN" NAME="actx" id="actx" VALUE=""> <!-- 2回目以降課金税額-->
             <INPUT TYPE="HIDDEN" NAME="ac1" id="ac1" VALUE=""> <!-- 課金日-->
