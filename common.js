@@ -19,14 +19,13 @@ function doPurchase() {
     var today = new Date();
 
     var billingDay = today.getDate();
-    today.setDate(today.getDay() + 1);
-    console.log(today);
+    today.setDate(today.getDate() + 1);
     var year = today.getFullYear();
     var month = today.getMonth() + 1;
     var day = today.getDate() ;
     var billingStartDay =  year + "/" + month + "/" + day;
 
-    //console.log(billingStartDay);
+    console.log(billingStartDay);
     document.getElementById("ac1").value = billingDay;
     document.getElementById("ac4").value = billingStartDay;
     document.getElementById("acam").value = totalprice;
