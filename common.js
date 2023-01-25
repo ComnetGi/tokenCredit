@@ -20,8 +20,8 @@ function doPurchase() {
     var billingDay = today.getDate();
     today.setDate(today.getDay() + 7);
     var year = today.getFullYear();
-    var month = today.getMonth() ;
-    var day = today.getDate() + 7 ;
+    var month = today.getMonth() + 1;
+    var day = today.getDate() ;
     var billingStartDay =  year + "/" + month + "/" + day;
 
     console.log(billingDay);
