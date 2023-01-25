@@ -11,6 +11,17 @@ function calc_price_total() {
     totalprice = licensenum * unitprice;
     document.getElementById("lbTotalPrice").innerHTML = totalprice.toLocaleString() + "  円 (税抜き)";
 
+    var today = new Date();
+    var billingDay = today.getDate();
+    today.setDate(today.getDay() + 7);
+    var year = today.getFullYear();
+    var month = today.getMonth() + 1;
+    var day = today.getDate() ;
+    var billingStartDay =  year + "/" + month + "/" + day;
+
+    console.log(billingDay);
+    console.log(billingStartDay);
+
 }
 
 // カード情報入力フォーム表示
